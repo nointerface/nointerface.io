@@ -1,22 +1,32 @@
 /*TODOS
+- use Bootstrap's navbar
 - backup fonts
 - smarter implementation with Bootstrap (re-use existing classes more, start from the scss files)
 - legacy browser support
-- mobile, tablet supprt*/
+- mobile, tablet supprt
+- check on multiple browsers/devices*/
 
 body {
   font-family: 'Open Sans';
 }
 
-@media (min-width: 992px) {
-  .container {
-    width: 960px;
+header {
+  border-bottom: 1px solid #1B274E;
+
+  @media (min-width: 576px) {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    border-bottom-style: none;
+    padding: 0;
   }
 }
 
-header {
-  margin-top: 6em;
-  margin-bottom: 6em;
+header img {
+  padding: 1em;
+}
+
+header a img {
+  padding: 1.5rem;
 }
 
 nav ul  {
@@ -31,75 +41,76 @@ nav ul li {
 }
 
 nav ul li a {
-  font-family: 'OpenSans-Semibold';
-  font-size: 0.85em;
+  font-weight: 600;
+  font-size: 0.875rem;
   color: #1B274E;
+}
+
+.container {
+  @media (min-width: 992px) {
+    width: 960px;
+  }
 }
 
 blockquote {
-  font-family: 'OpenSans-SemiboldItalic';
-  font-size: 1.3em;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.3125rem;
   color: #1B274E;
   text-align: center;
-  margin: 4em auto 4em auto;
+  margin: 4rem auto 4rem auto;
 }
 
 blockquote span {
-  padding-bottom: 0.25em;
-  border-bottom: 0.5em solid #839AFE;
+  padding-bottom: 0.25rem;
+  border-bottom: 0.5rem solid #839AFE;
 }
 
 .box {
   border: 1px solid #1B274E;
-  padding: 2em;
-  margin-bottom: 2em;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .clients {
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 
 .portraits {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .button {
   display: flex;
   justify-content: center;
-  margin-top: 4em;
-  margin-bottom: 4em;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 main {
-  margin-bottom: 3em;
+  margin-bottom: 3rem;
 }
 
-main h1 {
-  font-size: 2.5em;
+main > h1, main > h2 {
+  font-size: 1.625rem;
+  line-height: 2.5rem;
   color: #1B274E;
-  line-height: 2em;
   text-align: center;
-  margin: 1em;
+  margin: 2em 1em;
+
+  @media (min-width: 576px) {
+    font-size: 2.5rem;
+    line-height: 2.875rem;
+  }
 }
 
-main h1 b {
-  font-family: 'OpenSans-Bold';
+main > h1 b {
+  font-weight: bold;
 }
 
-main h2 {
-  font-family: 'OpenSans-Bold';
-  font-size: 1.5em;
-  color: #1B274E;
-  margin-bottom: 1.5em;
-}
-
-main h3 {
-  font-family: 'OpenSans-Bold';
-  font-size: 1em;
-  color: #6380FD;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+main > h2 {
+  font-weight: 800;
 }
 
 main section {
@@ -107,16 +118,31 @@ main section {
   margin-bottom: 2em;
 }
 
+main section h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #1B274E;
+  margin-bottom: 1.5rem;
+}
+
+main section h2 {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #6380FD;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 main aside {
   font-family: 'Georgia';
-  font-size: 0.75em;
+  font-size: 0.75rem;
   text-align: center;
   color: #FFFFFF;
   background-color: #1B274E;
-  padding: 0.75em;
+  padding: 0.75rem;
   position: absolute;
-  right:-1em;
-  bottom: -1em;
+  right: -1rem;
+  bottom: -1rem;
 }
 
 /*main #work .row:nth-child(odd) {
@@ -128,12 +154,12 @@ main aside {
 
 main p {
   color: #000000;
-  margin-top: 1.5em;
-  margin-bottom: 2em;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 main p br {
-  line-height: 2em;
+  line-height: 2rem;
 }
 
 main hr {
@@ -151,33 +177,36 @@ main ul {
 
 main button {
   background: #F3BB12;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   border-style: none;
-  font-family: 'OpenSans-Bold';
-  font-size: 1.5em;
+  font-weight: bold;
+  font-size: 1.5rem;
   color: #1B274E;
-  padding: 0.25em 2em 0.25em 2em;
+  padding: 0.25rem 2rem 0.25rem 2rem;
 }
 
 footer {
   border: 1px solid #1B274E;
-  margin-bottom: 6em;
-  font-family: 'OpenSans-Italic';
+  margin-bottom: 6rem;
+  font-style: italic;
   color: #000000;
 }
 
-footer h2 {
-  margin: 1em;
+footer h1 {
+  margin: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #1B274E;
 }
 
 footer p {
-  font-size: 0.8em;
-  margin: 2em;
+  font-size: 0.8rem;
+  margin: 1rem;
 }
 
 footer address {
-  font-size: 0.8em;
-  margin: 2em;
+  font-size: 0.8rem;
+  margin: 1rem;
 }
 
 footer ul  {
@@ -195,18 +224,12 @@ footer ul li:nth-child(even) {
 
 footer ul li a {
   display: flex;
-  padding: 2em;
+  padding: 2rem;
 }
 
 footer ul li a img {
   align-items: center;
   justify-content: center;
-}
-
-footer h2 {
-  font-family: 'OpenSans-Bold';
-  font-size: 1.5em;
-  color: #1B274E;
 }
 
 footer hr {
