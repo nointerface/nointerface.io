@@ -6,12 +6,28 @@
 - mobile, tablet supprt
 - check on multiple browsers/devices*/
 
+@import "../../node_modules/bootstrap/scss/_variables.scss";
+
+$xs-width: map-get($grid-breakpoints, xs);
+$sm-width: map-get($grid-breakpoints, sm);
+$md-width: map-get($grid-breakpoints, md);
+$lg-width: map-get($grid-breakpoints, lg);
+$xl-width: map-get($grid-breakpoints, xl);
+
+$dark-blue: #1B274E;
+
+.container {
+  @media (min-width: $lg-width) {
+    width: 960px;
+  }
+}
+
 body {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 header {
-  border-bottom: 1px solid #1B274E;
+  border-bottom: 1px solid $dark-blue;
 
   @media (min-width: 576px) {
     margin-top: 6rem;
@@ -19,137 +35,178 @@ header {
     border-bottom-style: none;
     padding: 0;
   }
-}
 
-header img {
-  padding: 1em;
-}
-
-header a img {
-  padding: 1.5rem;
-}
-
-nav ul  {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  list-style-type: none;
-}
-
-nav ul li a {
-  font-weight: 600;
-  font-size: 0.875rem;
-  color: #1B274E;
-}
-
-.container {
-  @media (min-width: 992px) {
-    width: 960px;
+  img {
+    padding: 1em;
   }
-}
 
-blockquote {
-  font-weight: 600;
-  font-style: italic;
-  font-size: 1.3125rem;
-  color: #1B274E;
-  text-align: center;
-  margin: 4rem auto 4rem auto;
-}
+  a img {
+    padding: 1.5rem;
+  }
 
-blockquote span {
-  padding-bottom: 0.25rem;
-  border-bottom: 0.5rem solid #839AFE;
-}
+  nav ul  {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
 
-.box {
-  border: 1px solid #1B274E;
-  padding: 2rem;
-  margin-bottom: 2rem;
+    li {
+      list-style-type: none;
+
+      a {
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: $dark-blue;
+      }
+    }
+  }
 }
 
 main {
   margin-bottom: 3rem;
-}
 
-main .clients {
-  margin-top: 2rem;
-}
+  & > h1, & > h2 {
+    font-size: 1.625rem;
+    line-height: 2.5rem;
+    color: $dark-blue;
+    text-align: center;
+    margin: 2em 1em;
 
-main .portraits {
-  margin: 2rem 0;
-}
+    @media (min-width: 576px) {
+      font-size: 2.5rem;
+      line-height: 2.875rem;
+    }
 
-main .button {
-  display: flex;
-  justify-content: center;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
+    b {
+      font-weight: bold;
+    }
+  }
 
-main > h1, main > h2 {
-  font-size: 1.625rem;
-  line-height: 2.5rem;
-  color: #1B274E;
-  text-align: center;
-  margin: 2em 1em;
+  & > h2 {
+    font-weight: 800;
+  }
 
-  @media (min-width: 576px) {
-    font-size: 2.5rem;
-    line-height: 2.875rem;
+  .quote-wrap {
+    text-align: center;
+  }
+  .quote {
+    display: inline-block;
+    padding-bottom: 0rem;
+    border-bottom: 1rem solid #839AFE;
+  }
+
+  blockquote {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 0.9375rem;
+    color: $dark-blue;
+    text-align: center;
+    line-height: 2rem;
+    margin: 3rem auto;
+
+    @media (min-width: $md-width) {
+      font-size: 1.3125rem;
+      margin: 5rem auto;
+    }
+
+    span {
+      padding-bottom: 0.25rem;
+      border-bottom: 0.5rem solid #839AFE;
+    }
+  }
+
+  .box {
+    @media (min-width: $md-width) {
+      border: 1px solid $dark-blue;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+
+  #work > .row:nth-child(odd) {
+
+    @media (min-width: $md-width) {
+
+      & > div:first-child {
+        -webkit-box-ordinal-group: 2;
+        -webkit-order: 1;
+        -ms-flex-order: 1;
+        order: 1;
+      }
+    }
+  }
+
+  #work > .row:nth-child(even) {
+
+    @media (min-width: $md-width) {
+
+      aside {
+        left: -1rem;
+        right: unset;
+      }
+    }
+  }
+
+  #work img {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .clients {
+    margin-top: 2rem;
+  }
+
+  .portraits {
+    margin: 2rem 0;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  section {
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    h1 {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: $dark-blue;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-weight: bold;
+      font-size: 1rem;
+      color: #6380FD;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  aside {
+    font-family: 'Georgia';
+    font-size: 0.75rem;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: $dark-blue;
+    padding: 0.75rem;
+    position: absolute;
+    z-index: 2;
+    bottom: 2rem;
+    right: 0;
+    
+    @media (min-width: $md-width) {
+      left: unset;
+      right: -1rem;
+      bottom: -1rem;
+    }
   }
 }
-
-main > h1 b {
-  font-weight: bold;
-}
-
-main > h2 {
-  font-weight: 800;
-}
-
-main section {
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-
-main section h1 {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #1B274E;
-  margin-bottom: 1.5rem;
-}
-
-main section h2 {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #6380FD;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-main aside {
-  font-family: 'Georgia';
-  font-size: 0.75rem;
-  text-align: center;
-  color: #FFFFFF;
-  background-color: #1B274E;
-  padding: 0.75rem;
-  position: absolute;
-  right: -1rem;
-  bottom: -1rem;
-}
-
-/*main #work .row:nth-child(odd) {
-  -webkit-box-ordinal-group: 2;
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-}*/
 
 main p {
   color: #000000;
@@ -162,7 +219,7 @@ main p br {
 }
 
 main hr {
-  border-color: #1B274E;
+  border-color: $dark-blue;
   border-width: 1px;
   margin: 0;
   width: 100%;
@@ -180,12 +237,12 @@ main button {
   border-style: none;
   font-weight: bold;
   font-size: 1.5rem;
-  color: #1B274E;
+  color: $dark-blue;
   padding: 0.25rem 2rem 0.25rem 2rem;
 }
 
 footer {
-  border: 1px solid #1B274E;
+  border: 1px solid $dark-blue;
   margin-bottom: 6rem;
   font-style: italic;
   color: #000000;
@@ -195,7 +252,7 @@ footer h1 {
   margin: 1rem;
   font-weight: bold;
   font-size: 1.5rem;
-  color: #1B274E;
+  color: $dark-blue;
 }
 
 footer p {
@@ -214,7 +271,7 @@ footer ul  {
 
 footer ul li {
   list-style-type: none;
-  background-color: #1B274E;
+  background-color: $dark-blue;
 }
 
 footer ul li:nth-child(even) {
@@ -233,7 +290,7 @@ footer ul li a img {
 
 footer hr {
   opacity: 0.2;
-  background: #1B274E;
+  background: $dark-blue;
   width: 100vw;
   position: relative;
   margin-left: -50vw;
