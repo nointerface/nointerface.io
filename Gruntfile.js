@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                 // Target
                 options: {
                     // Target options
-                    outputStyle: "compressed",
+                    outputStyle: "compact",
                     sourceMap: false
                 },
                 files: {
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
           },
           target: {
             src: ['dist/index.html'],
-            css: ['dist/styles/*.css'],
+            css: ['dist/styles/bootstrap-grid.css', 'dist/styles/bootstrap.css', 'dist/styles/style.css'],
             dest: 'dist/styles/bundle.css'
           },
         },
@@ -68,6 +68,9 @@ module.exports = function(grunt) {
         clean:  {
           css: ['dist/styles/*.css', '!dist/styles/bundle.css']
         },
+        shell: {
+            command: 'afplay /System/Library/Sounds/Glass.aiff'
+        },
         chokidar: {
           scripts: {
             files: ['src/**'],
@@ -82,8 +85,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-chokidar');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-shell');
     // Default task(s).
-    grunt.registerTask("default", [ "htmlmin", "sass", "postcss", "purifycss", "copy", "clean" ]);
+    grunt.registerTask("default", [ "htmlmin", "sass", "postcss", "purifycss", "copy", "clean", "shell" ]);
     grunt.registerTask("watch", [ "chokidar" ]);
 
 };
