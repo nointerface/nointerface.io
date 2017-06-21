@@ -72,24 +72,23 @@ blockquote span {
   margin-bottom: 2rem;
 }
 
-.clients {
+main {
+  margin-bottom: 3rem;
+}
+
+main .clients {
   margin-top: 2rem;
 }
 
-.portraits {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+main .portraits {
+  margin: 2rem 0;
 }
 
-.button {
+main .button {
   display: flex;
   justify-content: center;
   margin-top: 4rem;
   margin-bottom: 4rem;
-}
-
-main {
-  margin-bottom: 3rem;
 }
 
 main > h1, main > h2 {
