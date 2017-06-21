@@ -1,8 +1,22 @@
 {
-  "dependencies": {
-    "bootstrap": "4.0.0-alpha.6"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "reload": "^1.1.5"
+    "autoprefixer": "^7.1.1",
+    "bootstrap": "4.0.0-alpha.6",
+    "grunt": "^1.0.1",
+    "grunt-chokidar": "^1.0.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-purifycss": "^0.1.2",
+    "grunt-sass": "^2.0.0",
+    "postcss-cli": "^4.1.0",
+    "reload": "^1.1.6"
+  },
+  "scripts": {
+    "build": "$(npm bin)/grunt",
+    "watch": "$(npm bin)/grunt watch",
+    "dev": "$(npm bin)/reload --dir dist/"
   }
 }
