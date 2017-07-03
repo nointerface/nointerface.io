@@ -116,11 +116,15 @@ main {
   }
 
   .box {
+
+    // margin-bottom: 2rem;
+
     @media (min-width: $md-width) {
       border: 1px solid $dark-blue;
       padding: 2rem;
-      margin-bottom: 2rem;
+      // margin-bottom: 0;
     }
+
   }
 
   #work > .row:nth-child(odd) {
@@ -128,9 +132,6 @@ main {
     @media (min-width: $md-width) {
 
       & > div:first-child {
-        -webkit-box-ordinal-group: 2;
-        -webkit-order: 1;
-        -ms-flex-order: 1;
         order: 1;
       }
 
@@ -158,15 +159,29 @@ main {
 
   #work img {
     width: 100%;
-    margin: 2rem 0;
+    margin: 1rem 0;
+  }
+
+  #work .box {
+    margin-bottom: 2rem;
   }
 
   #clients img {
     width: 100%;
   }
 
-  .portraits {
-    margin: 2rem 0;
+  #youwe img {
+    width: 100%;
+  }
+
+  #youwe > .box:nth-child(1) {
+        border-right-width: 0px;
+
+        margin-bottom: 2rem;
+
+        @media (min-width: $md-width) {
+          margin-bottom: 0;
+        }
   }
 
   .button {
@@ -198,11 +213,11 @@ main {
 
   aside {
     font-family: 'Georgia';
-    font-size: 0.75rem;
+    font-size: 0.625rem;
     text-align: center;
     color: #FFFFFF;
     background-color: $dark-blue;
-    padding: 0.75rem 2rem;
+    padding: 0.5rem 1.5rem;
     position: absolute;
     z-index: 2;
     bottom: 2rem;
@@ -240,7 +255,8 @@ main button {
   font-weight: bold;
   font-size: 1.5rem;
   color: $dark-blue;
-  padding: 0.25rem 2rem 0.25rem 2rem;
+  padding: 0.5rem 0rem;
+  width: 15rem;
 }
 
 footer {
