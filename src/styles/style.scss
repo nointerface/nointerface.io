@@ -1,10 +1,13 @@
-/*TODOS
+/*
+TODOS
 - use Bootstrap's navbar
-- backup fonts
-- smarter implementation with Bootstrap (re-use existing classes more, start from the scss files)
-- legacy browser support
 - mobile, tablet supprt
-- check on multiple browsers/devices*/
+- replace social icons with svg
+- check on multiple browsers/devices
+- recheck with w3c validator
+- obfuscate email & phone
+*/
+
 
 @import "../../node_modules/bootstrap/scss/_variables.scss";
 
@@ -260,55 +263,73 @@ main button {
 }
 
 footer {
-  border: 1px solid $dark-blue;
-  margin-bottom: 6rem;
-  font-style: italic;
+  // display: flex;
   color: #000000;
+  // font-style: italic;
+  margin-bottom: 6rem;
+
+  @media (min-width: $md-width) {
+    border-width: 1px;
+    border: 1px solid $dark-blue;
+    // margin-right: 0px;
+  }
+}
+
+footer .no-right-gutter {
+
+  @media (min-width: $md-width) {
+    padding-right: 0px;
+  }
 }
 
 footer h1 {
-  margin: 1rem;
+  margin: 1rem 0;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: $dark-blue;
+
+  @media (min-width: $md-width) {
+    font-size: 1.5rem;
+  }
 }
 
 footer p {
   font-size: 0.8rem;
-  margin: 1rem;
+  margin: 1rem 0;
+}
+
+footer hr {
+  border-color: $dark-blue;
+  border-width: 1px;
+  margin: 1.5rem 0;
+  width: 100%;
 }
 
 footer address {
   font-size: 0.8rem;
-  margin: 1rem;
+  margin: 1rem 0;
 }
 
-footer ul  {
-  margin: 0;
-}
-
-footer ul li {
-  list-style-type: none;
+footer #contacts a {
   background-color: $dark-blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12% 0;
+
+  @media (min-width: $md-width) {
+    padding: 3% 0;
+    // margin-right: -15px;
+  }
 }
 
-footer ul li:nth-child(even) {
+footer #contacts a:nth-child(odd) {
   background-color: #354062;
 }
 
-footer ul li a {
-  display: flex;
-  padding: 2rem;
-}
-
-footer ul li a img {
-  align-items: center;
-  justify-content: center;
-}
-
-footer hr {
+#full-width-hr {
   opacity: 0.2;
-  background: $dark-blue;
+  border-color: $dark-blue;
   width: 100vw;
   position: relative;
   margin-left: -50vw;
