@@ -263,51 +263,51 @@ main button {
 }
 
 footer {
-  // display: flex;
   color: #000000;
-  // font-style: italic;
   margin-bottom: 6rem;
 
   @media (min-width: $md-width) {
     border-width: 1px;
     border: 1px solid $dark-blue;
-    // margin-right: 0px;
   }
 }
 
-footer .no-right-gutter {
+footer #footer-top {
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: $md-width) {
+    flex-direction: row;
+    justify-content: space-between;
     padding-right: 0px;
   }
-}
-
-footer h1 {
-  margin: 1rem 0;
-  font-weight: bold;
-  font-size: 1rem;
-  color: $dark-blue;
-
-  @media (min-width: $md-width) {
-    font-size: 1.5rem;
-  }
-}
-
-footer p {
-  font-size: 0.8rem;
-  margin: 1rem 0;
 }
 
 footer hr {
   border-color: $dark-blue;
   border-width: 1px;
-  margin: 1.5rem 0;
+  margin: 0;
   width: 100%;
 }
 
-footer address {
-  font-size: 0.8rem;
-  margin: 1rem 0;
+footer h1 {
+  font-weight: bold;
+  font-size: 1rem;
+  color: $dark-blue;
+  margin: 1.5rem 0;
+
+  @media (min-width: $md-width) {
+    font-size: 1.5rem;
+    // flex-shrink: 1;
+  }
+}
+
+footer #contacts {
+  display: flex;
+
+  @media (min-width: $md-width) {
+    width: 50%
+  }
 }
 
 footer #contacts a {
@@ -315,11 +315,12 @@ footer #contacts a {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-basis: 0;
+  flex-grow: 1;
   padding: 12% 0;
 
   @media (min-width: $md-width) {
-    padding: 3% 0;
-    // margin-right: -15px;
+    padding: 0;
   }
 }
 
@@ -327,7 +328,34 @@ footer #contacts a:nth-child(odd) {
   background-color: #354062;
 }
 
-#full-width-hr {
+footer #footer-bottom {
+
+  @media (min-width: $md-width) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+}
+
+footer p, address {
+  font-size: 0.8rem;
+  margin: 1rem 0;
+
+  @media (min-width: $md-width) {
+    margin: 0;
+  }
+}
+
+footer #footer-bottom-left {
+
+  @media (min-width: $md-width) {
+    text-align: right;
+  }
+}
+
+footer #full-width-hr {
   opacity: 0.2;
   border-color: $dark-blue;
   width: 100vw;
