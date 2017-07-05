@@ -32,37 +32,40 @@ body {
 header {
   border-bottom: 1px solid $dark-blue;
 
-  @media (min-width: 576px) {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
-    border-bottom-style: none;
-    padding: 0;
-  }
-
-  img {
-    padding: 1em;
-  }
-
-  a img {
-    padding: 1.5rem;
-  }
-
-  nav ul  {
+  #header {
     display: flex;
     justify-content: space-between;
-    margin: 0;
-    padding: 0;
-
-    li {
-      list-style-type: none;
-
-      a {
-        font-weight: 600;
-        font-size: 0.875rem;
-        color: $dark-blue;
-      }
-    }
+    flex-direction: row;
+    align-items: center;
+    padding-right: 0px;
   }
+
+  @media (min-width: $md-width) {
+    border-bottom-style: none;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #menu {
+    padding: 1rem;
+  }
+
+  nav {
+
+    display: flex;
+    flex-direction: row;
+
+    a {
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: $dark-blue;
+      padding: 1rem 2rem;
+    }
+  } 
 }
 
 main {
@@ -298,7 +301,6 @@ footer h1 {
 
   @media (min-width: $md-width) {
     font-size: 1.5rem;
-    // flex-shrink: 1;
   }
 }
 
