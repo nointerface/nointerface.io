@@ -2,8 +2,10 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^7.1.1",
-    "bootstrap": "^4.0.0",
+    "babel-preset-env": "^1.6.0",
+    "bootstrap": "^4.0.0-alpha",
     "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
     "grunt-chokidar": "^1.0.0",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-copy": "^1.0.0",

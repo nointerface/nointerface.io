@@ -54,6 +54,24 @@ module.exports = function(grunt) {
             dest: 'dist/styles/bundle.css'
           },
         },
+        babel: {
+            options: {
+                "presets": [
+                    [ "env", {
+                        "targets": {
+                            "browsers": ["last 2 versions", "> 5%"]
+                        }
+                    }]
+                ],
+                minified: true,
+                comments: false
+            },
+            dist: {
+                files: {
+                    'dist/js/bundle.js': 'src/js/script.js'
+                }
+            }
+        },
         copy: {
           dist: {
             files: [
@@ -61,7 +79,8 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: 'src/images',
                 src: ['**'],
-                dest: 'dist/images'}
+                dest: 'dist/images'
+              }
             ]
           }
         },
@@ -83,11 +102,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-purifycss');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-chokidar');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-shell');
     // Default task(s).
-    grunt.registerTask("default", [ "htmlmin", "sass", "postcss", "purifycss", "copy", "clean", "shell" ]);
+    grunt.registerTask("default", [ "htmlmin", "sass", "postcss", "purifycss", "copy", "babel", "clean", "shell" ]);
     grunt.registerTask("watch", [ "chokidar" ]);
 
 };
