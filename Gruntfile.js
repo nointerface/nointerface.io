@@ -54,6 +54,15 @@ module.exports = function(grunt) {
             dest: 'dist/styles/bundle.css'
           },
         },
+        browserify: {
+            dist: {
+                files: {
+                    'dist/js/browserify.js': 'src/js/script.js'
+                },
+                options: {
+                }
+            }
+        },
         babel: {
             options: {
                 "presets": [
@@ -68,7 +77,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'dist/js/bundle.js': 'src/js/script.js'
+                    'dist/js/bundle.js': 'dist/js/browserify.js'
                 }
             }
         },
@@ -85,7 +94,8 @@ module.exports = function(grunt) {
           }
         },
         clean:  {
-          css: ['dist/styles/*.css', '!dist/styles/bundle.css']
+          css: ['dist/styles/*.css', '!dist/styles/bundle.css'],
+          js: 'dist/js/browserify.js'
         },
         shell: {
             command: 'afplay /System/Library/Sounds/Glass.aiff'
@@ -102,12 +112,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-purifycss');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-chokidar');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-shell');
     // Default task(s).
-    grunt.registerTask("default", [ "htmlmin", "sass", "postcss", "purifycss", "copy", "babel", "clean", "shell" ]);
+    grunt.registerTask("default", [ "htmlmin", "sass", "postcss", "purifycss", "copy", "browserify", "babel", "clean", "shell" ]);
     grunt.registerTask("watch", [ "chokidar" ]);
 
 };

@@ -85,6 +85,11 @@ header {
       text-align: right;
       padding: 1rem 4rem;
     }
+
+    a:hover, a:active, a:focus {
+      color: #F2BB12;
+      text-decoration: none;
+    }
   }
 
   @media (min-width: $md-width) {
