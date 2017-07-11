@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     // Dictionary of files
-                    "docs/index.html": "src/index.html"
+                    "dist/index.html": "src/index.html"
                 }
             }
         },
@@ -27,9 +27,9 @@ module.exports = function(grunt) {
                 },
                 files: {
                     // Dictionary of files
-                    "docs/styles/style.css": "src/styles/style.scss",
-                    "docs/styles/bootstrap.css": "node_modules/bootstrap/scss/bootstrap.scss",
-                    "docs/styles/bootstrap-grid.css": "node_modules/bootstrap/scss/bootstrap-grid.scss"
+                    "dist/styles/style.css": "src/styles/style.scss",
+                    "dist/styles/bootstrap.css": "node_modules/bootstrap/scss/bootstrap.scss",
+                    "dist/styles/bootstrap-grid.css": "node_modules/bootstrap/scss/bootstrap-grid.scss"
                 }
             }
         },
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
                 ]
             },
             dist: {
-                src: 'docs/styles/*.css'
+                src: 'dist/styles/*.css'
             }
         },
         purifycss: {
@@ -49,15 +49,15 @@ module.exports = function(grunt) {
             minify: true
           },
           target: {
-            src: ['docs/index.html'],
-            css: ['docs/styles/bootstrap-grid.css', 'docs/styles/bootstrap.css', 'docs/styles/style.css'],
-            dest: 'docs/styles/bundle.css'
+            src: ['dist/index.html'],
+            css: ['dist/styles/bootstrap-grid.css', 'dist/styles/bootstrap.css', 'dist/styles/style.css'],
+            dest: 'dist/styles/bundle.css'
           },
         },
         browserify: {
             dist: {
                 files: {
-                    'docs/js/browserify.js': 'src/js/script.js'
+                    'dist/js/browserify.js': 'src/js/script.js'
                 },
                 options: {
                 }
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'docs/js/bundle.js': 'docs/js/browserify.js'
+                    'dist/js/bundle.js': 'dist/js/browserify.js'
                 }
             }
         },
@@ -88,14 +88,14 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: 'src/images',
                 src: ['**'],
-                dest: 'docs/images'
+                dest: 'dist/images'
               }
             ]
           }
         },
         clean:  {
-          css: ['docs/styles/*.css', '!docs/styles/bundle.css'],
-          js: 'docs/js/browserify.js'
+          css: ['dist/styles/*.css', '!dist/styles/bundle.css'],
+          js: 'dist/js/browserify.js'
         },
         shell: {
             command: 'afplay /System/Library/Sounds/Glass.aiff'
