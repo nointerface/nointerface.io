@@ -23,6 +23,6 @@
     "build": "$(npm bin)/grunt",
     "watch": "$(npm bin)/grunt watch",
     "dev": "$(npm bin)/reload --dir dist/",
-    "deploy": "aws s3 sync dist/ s3://nointerface --delete"
+    "deploy": "rsync -r --delete --compress --filter 'protect .well-known/' dist/ guillaume@nointerface.io:/var/www/ && rsync --compress conf/nginx.conf guillaume@nointerface.io:/etc/nginx/nginx.conf && rsync --compress conf/nointerface.conf guillaume@nointerface.io:/etc/nginx/sites-available/nointerface"
   }
 }
