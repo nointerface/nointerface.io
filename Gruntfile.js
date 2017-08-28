@@ -27,9 +27,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     // Dictionary of files
-                    "dist/styles/style.css": "src/styles/style.scss",
-                    "dist/styles/bootstrap.css": "node_modules/bootstrap/scss/bootstrap.scss",
-                    "dist/styles/bootstrap-grid.css": "node_modules/bootstrap/scss/bootstrap-grid.scss"
+                    "dist/styles/style.css": "src/styles/style.scss"
                 }
             }
         },

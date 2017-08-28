@@ -9,9 +9,9 @@ var e = document.getElementById('header-down');
 function toggleNavVisibility() {
 	console.log('toggling!');
 	if ( window.getComputedStyle(e).display.startsWith('none') ) {
-		e.classList.remove("hidden-sm-down");
+		e.classList.remove("d-none","d-md-flex");
 	} else {
-		e.classList.add("hidden-sm-down");
+		e.classList.add("d-none","d-md-flex");
 	}
 };
 
@@ -25,7 +25,7 @@ if (mq.matches) {
 	// Close nav if user taps out of it
 	document.getElementById('main').onclick = function() {
 		if ( !window.getComputedStyle(e).display.startsWith('none') ) {
-			e.classList.add("hidden-sm-down");
+			e.classList.add("d-none","d-md-flex");
 		};
 	};
 
@@ -44,3 +44,4 @@ Array.from(document.getElementById('header-down').children).forEach(
 		};
 	}
 );
+
