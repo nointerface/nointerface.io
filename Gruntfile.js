@@ -44,16 +44,6 @@ module.exports = function(grunt) {
                 src: 'dist/styles/*.css'
             }
         },
-        purifycss: {
-          options: {
-            minify: true
-          },
-          target: {
-            src: ['dist/index.html'],
-            css: ['dist/styles/bootstrap-grid.css', 'dist/styles/bootstrap.css', 'dist/styles/style.css'],
-            dest: 'dist/styles/bundle.css'
-          },
-        },
         browserify: {
             dist: {
                 files: {
@@ -80,6 +70,16 @@ module.exports = function(grunt) {
                     'dist/js/bundle.js': 'dist/js/browserify.js'
                 }
             }
+        },
+        purifycss: {
+          options: {
+            minify: true
+          },
+          target: {
+            src: ['dist/index.html', 'dist/js/bundle.js'],
+            css: ['dist/styles/bootstrap-grid.css', 'dist/styles/bootstrap.css', 'dist/styles/style.css'],
+            dest: 'dist/styles/bundle.css'
+          },
         },
         copy: {
           dist: {
