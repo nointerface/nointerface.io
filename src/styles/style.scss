@@ -1,14 +1,3 @@
-/*
-TODOS
-- reorg h* tags (put svg logo inside h1, with title or microdata)
-- use Bootstrap's navbar
-- tablet support
-- QA w/ browserstack
-- recheck with w3c validators
-- obfuscate email & phone
-*/
-
-
 @import "../../node_modules/bootstrap/scss/_variables.scss";
 
 $xs-width: map-get($grid-breakpoints, xs);
