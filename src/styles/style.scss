@@ -8,6 +8,7 @@ $xl-width: map-get($grid-breakpoints, xl);
 
 $dark-blue: #1B274E;
 $yellow: #F2BB12;
+$light-yellow: #FFCD35;
 
 .container {
   // position: absolute;
@@ -76,7 +77,7 @@ header {
     }
 
     a:hover, a:active, a:focus {
-      color: #F2BB12;
+      color: $yellow;
       text-decoration: none;
     }
   }
@@ -223,9 +224,9 @@ main {
         }
   }
 
-  .button {
-    display: flex;
-    justify-content: center;
+  .buttonRow {
+    display: block;
+    text-align: center;
     margin-top: 4rem;
     margin-bottom: 4rem;
   }
@@ -268,6 +269,35 @@ main {
       bottom: -1rem;
     }
   }
+
+  button {
+    position: relative;
+    width: 15rem;
+    padding: 0.5rem 0rem;
+    background: $light-yellow;
+    border-radius: 0.5rem;
+    border-style: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: $dark-blue;
+
+    &:hover {
+      background: $yellow;
+      transition: all 0.3s;
+    }
+
+    &:focus {
+      background: $light-yellow;
+      outline:none;
+    }
+
+    &:active {
+      background: $yellow;
+      top: 2px;
+    }
+
+  }
+
 }
 
 main p {
@@ -285,17 +315,6 @@ main ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-}
-
-main button {
-  background: #F3BB12;
-  border-radius: 0.5rem;
-  border-style: none;
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: $dark-blue;
-  padding: 0.5rem 0rem;
-  width: 15rem;
 }
 
 footer {
