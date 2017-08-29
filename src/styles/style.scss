@@ -11,15 +11,11 @@ $yellow: #F2BB12;
 $light-yellow: #FFCD35;
 
 .container {
-  // position: absolute;
 
   @media (min-width: $lg-width) {
-    width: 960px;
+    width: map-get($container-max-widths, lg);
   }
 
-  // @media (min-width: $md-width) {
-  //   position: relative;
-  // }
 }
 
 body {
@@ -29,7 +25,9 @@ body {
 header {
 
   #header {
-    // position: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -37,8 +35,14 @@ header {
     padding-right: 0px;
     border-bottom: 1px solid $dark-blue;
 
+    @media (min-width: $sm-width) {
+      left: unset;
+      width: map-get($container-max-widths, sm);
+    }
+
     @media (min-width: $md-width) {
       position: relative;
+      width: unset;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -101,8 +105,12 @@ header {
 }
 
 main {
-  // margin-top: 6rem;
+  margin-top: 5rem;
   margin-bottom: 3rem;
+
+  @media (min-width: $sm-width) {
+    margin-top: 8rem;
+  }
 
   @media (min-width: $md-width) {
     margin-top: unset;
