@@ -31,7 +31,7 @@ if (mq.matches) {
 
 };
 
-// Tapping in nav scrolls down to anchor;
+// Tapping in nav scrolls down to anchor
 // No-JS browsers jump directly to anchor
 Array.from(document.getElementById('header-down').children).forEach(
 	(elem, index) => {
@@ -45,3 +45,8 @@ Array.from(document.getElementById('header-down').children).forEach(
 	}
 );
 
+// Tapping header scrolls back to top
+document.getElementById('logo').onclick = () => {
+	jump("header");
+	return false;
+};
