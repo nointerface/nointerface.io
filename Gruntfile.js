@@ -96,7 +96,10 @@ module.exports = function(grunt) {
           js: 'dist/js/browserify.js'
         },
         shell: {
-            command: 'afplay /System/Library/Sounds/Glass.aiff'
+            command: 'afplay /System/Library/Sounds/Glass.aiff',
+            options: {
+                failOnError: false
+            }
         },
         chokidar: {
           scripts: {
